@@ -1,0 +1,26 @@
+es codes python suivants sont des noeuds ROS.
+
+aruco.py : récupère les images d'un flux vidéo et publie cette image.
+
+camera.py: recupere  l'image et cherche  un aruco dessus. les codes utilisés sont les codes du semestre précédent modifiés pour les introduire dans le projet ros.
+
+controleur.py : récupère l'ensemble des informations 
+disponibles sur l'aruco détécté (distance,ID,...). De ces informations, il commande le robot par des CMD_VEL qu'il publie.
+
+tous ces codes doivent étre implantés dans le fichier pol_bunker:
+
+git clone git@gitlab.polytech.umontpellier.fr:docs/cohoma/pol_bunker.git
+
+il faut par la suite modifier le dossier de setup avec celui disponble.
+
+Avant de lancer les codes : lancer la commande : foxy dans le terminal 
+
+il ne reste plus qu'à lancer les commandes suivantes :
+-ros2 launch pol_bunker bunker-sim.launch.py
+-ros2 run pol_bunker Aruco 
+-ros2 run pol_bunker Control 
+
+il est aussi possible de mettre en place un environnement gazebo:
+- le fichier Python cv_sub sert a souscrir à une image envoyer par Gazebo 
+il suffit donc d'ajouter CV_sub dans le setup et de l'ouvrir par la commande 
+-ros2 run pol_bunker OpenCV
