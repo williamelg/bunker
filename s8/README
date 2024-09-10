@@ -1,4 +1,4 @@
-es codes python suivants sont des noeuds ROS.
+les codes python suivants sont des noeuds ROS.
 
 aruco.py : récupère les images d'un flux vidéo et publie cette image.
 
